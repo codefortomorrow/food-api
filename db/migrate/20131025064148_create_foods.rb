@@ -9,12 +9,12 @@ class CreateFoods < ActiveRecord::Migration
       t.string :capacity_unit
 
       # nutrition
-      t.float  :calories_kcal
-      t.float  :carbohydrate_g
+      t.float  :calory_kcal
+      t.float  :protein_g
       t.float  :fat_g
       t.float  :fat_saturated_g
       t.float  :fat_trans_g
-      t.float  :protein_g
+      t.float  :carbohydrate_g
       t.float  :sodium_mg
 
       t.timestamps

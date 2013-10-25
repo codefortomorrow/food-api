@@ -8,11 +8,16 @@ module Foodapi
             end
             route_param :id do
                 get do
-                    food = Food.where(:barcode => params[:id])
-                    #{:id => params[:id]}
+                    Food.where(:barcode => params[:id])
                 end
             end
+
+            desc "Get all food"
+            get do
+                Food.all
+            end
         end
+
 
 
     end
