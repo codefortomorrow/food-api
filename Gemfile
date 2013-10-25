@@ -44,6 +44,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'grape'
 
 group :development do
       gem 'sqlite3'
