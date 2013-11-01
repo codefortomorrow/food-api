@@ -58,14 +58,6 @@ food_seed.each do |item|
         f.carbohydrate_g = item[13]
         f.sodium_mg = item[14]
     end
-    #Food.create!(:barcode => item[0], :name => item[1], :company_id => c[0].id, :capacity => item[3], :capacity_unit => item[4], :serving_vol => item[5], :serving_unit => item[6], :serving_size => item[7], 
-#      :calory_kcal => item[8],
-#      :protein_g => item[9],
-#      :fat_g => item[10],
-#      :fat_saturated_g => item[11],
-#      :fat_trans_g => item[12],
-#      :carbohydrate_g => item[13],
-#      :sodium_mg => item[14])
 end
 
 news_seed.each do |item|

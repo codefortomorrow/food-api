@@ -8,7 +8,7 @@ module Companyapi
             end
             route_param :id do
                 get do
-                    Company.where(:id => params[:id])
+                    Company.find(params[:id])
                 end
             end
 

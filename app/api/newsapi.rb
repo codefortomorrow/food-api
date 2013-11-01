@@ -8,7 +8,7 @@ module Newsapi
             end
             route_param :id do
                 get do
-                    News.where(:id => params[:id])
+                    News.find(params[:id])
                 end
             end
 
