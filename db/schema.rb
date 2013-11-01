@@ -11,14 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025064148) do
+ActiveRecord::Schema.define(version: 20131101091348) do
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "company_no"
+    t.string   "owner_name"
+    t.string   "address"
+    t.string   "phone_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "food_newsships", force: true do |t|
+    t.integer  "news_id"
+    t.integer  "food_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "foods", force: true do |t|
     t.string   "barcode"
-    t.string   "company_name"
-    t.string   "product_name"
+    t.string   "name"
+    t.integer  "company_id"
     t.float    "capacity"
     t.string   "capacity_unit"
+    t.float    "serving_vol"
+    t.string   "serving_unit"
+    t.float    "serving_size"
     t.float    "calory_kcal"
     t.float    "protein_g"
     t.float    "fat_g"
@@ -26,6 +46,17 @@ ActiveRecord::Schema.define(version: 20131025064148) do
     t.float    "fat_trans_g"
     t.float    "carbohydrate_g"
     t.float    "sodium_mg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news", force: true do |t|
+    t.string   "title"
+    t.datetime "timestamp"
+    t.string   "abstract"
+    t.text     "text"
+    t.string   "link"
+    t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

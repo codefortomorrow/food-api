@@ -3,4 +3,6 @@ class API < Grape::API
     format :json
 
     mount Foodapi::API
+    mount Newsapi::API
+    mount Companyapi::API
 end

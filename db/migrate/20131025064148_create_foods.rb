@@ -3,10 +3,15 @@ class CreateFoods < ActiveRecord::Migration
     create_table :foods do |t|
       # basic information
       t.string :barcode
-      t.string :company_name
-      t.string :product_name
+      t.string :name
+      t.integer:company_id
+      
+      # spec 
       t.float  :capacity
       t.string :capacity_unit
+      t.float  :serving_vol
+      t.string :serving_unit
+      t.float  :serving_size
 
       # nutrition
       t.float  :calory_kcal
