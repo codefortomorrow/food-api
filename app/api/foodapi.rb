@@ -2,6 +2,8 @@ module Foodapi
     class API < Grape::API
 
         resource :food do
+
+            # /food/<barcode>
             desc "Return the information of the given bar-code"
             params do 
                 requires :id, type: String, desc: "bar-code"
@@ -12,8 +14,10 @@ module Foodapi
                 end
             end
 
+            # /food/
             desc "Get all food"
             get do
+                #header "encoding", "utf-8"
                 Food.all
             end
         end
