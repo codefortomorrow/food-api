@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20131101091348) do
     t.string   "barcode"
     t.string   "name"
     t.integer  "company_id"
+    t.string   "img_url"
     t.float    "capacity"
     t.string   "capacity_unit"
     t.float    "serving_vol"

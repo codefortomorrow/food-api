@@ -26,7 +26,7 @@ module Foodapi
             paginable
             get do
                 if update_date
-                    Food.where("updated_at > ?", update_date)
+                    present Food.where("updated_at > ?", update_date)
                 else
                     present Food.all
                 end

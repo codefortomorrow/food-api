@@ -1,5 +1,6 @@
 module Companyapi
     class API < Grape::API
+    include ApiPagination
 
         resource :company do
             desc "Return the information of company given company id"
@@ -13,8 +14,9 @@ module Companyapi
             end
 
             desc "Get all companies"
+            paginable
             get do
-                Company.all
+                present Company.all
             end
         end
 

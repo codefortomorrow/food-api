@@ -5,6 +5,7 @@ class CreateFoods < ActiveRecord::Migration
       t.string :barcode
       t.string :name
       t.integer:company_id
+      t.string :img_url
       
       # spec 
       t.float  :capacity
