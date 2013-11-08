@@ -1,5 +1,12 @@
 module Foodapi
     class API < Grape::API
+    include ApiPagination
+        
+        helpers do 
+            def update_date
+                params[:update_after] ? Date.parse(params[:update_after]) : nil
+            end
+        end
 
         resource :food do
 
@@ -16,13 +23,15 @@ module Foodapi
 
             # /food/
             desc "Get all food"
+            paginable
             get do
-                #header "encoding", "utf-8"
-                Food.all
+                if update_date
+                    Food.where("updated_at > ?", update_date)
+                else
+                    present Food.all
+                end
             end
         end
-
-
 
     end
 end
