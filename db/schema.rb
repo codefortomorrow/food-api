@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101091348) do
+ActiveRecord::Schema.define(version: 20131110163334) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20131101091348) do
     t.string   "owner_name"
     t.string   "address"
     t.string   "phone_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "followships", force: true do |t|
+    t.string   "user_id"
+    t.integer  "food_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +54,9 @@ ActiveRecord::Schema.define(version: 20131101091348) do
     t.float    "fat_trans_g"
     t.float    "carbohydrate_g"
     t.float    "sodium_mg"
+    t.integer  "rec_score"
+    t.integer  "queried_no"
+    t.integer  "followed_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

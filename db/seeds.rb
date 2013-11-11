@@ -70,6 +70,8 @@ food_seed.each do |item|
         f.fat_trans_g = item[12]
         f.carbohydrate_g = item[13]
         f.sodium_mg = item[14]
+	f.rec_score = Random::rand(-20..20)
+	f.followed_no = Random::rand(0..100)
     end
 end
 

@@ -23,6 +23,11 @@ class CreateFoods < ActiveRecord::Migration
       t.float  :carbohydrate_g
       t.float  :sodium_mg
 
+      # statics
+      t.integer :rec_score
+      t.integer :queried_no
+      t.integer :followed_no
+
       t.timestamps
     end
   end

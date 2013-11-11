@@ -4,6 +4,7 @@ class API < Grape::API
     content_type :json, "application/json; charset=utf-8"
 
     mount Foodapi::API
+    mount Followapi::API
     mount Newsapi::API
     mount Companyapi::API
 end

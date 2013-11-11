@@ -1,6 +1,7 @@
 module Foodapi
     class API < Grape::API
     include ApiPagination
+    include Util
         
         helpers do 
             def update_date
