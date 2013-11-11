@@ -33,7 +33,7 @@ module Followapi
 	    end
 	    delete do
 		fs = Followship.where(:user_id => params[:user_id], :food_id => params[:food_id]).first
-		if first
+		if fs
 		    fs.destroy
 		    Result.success
 		else
