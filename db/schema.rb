@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110163334) do
+ActiveRecord::Schema.define(version: 20131203105201) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20131110163334) do
     t.string   "owner_name"
     t.string   "address"
     t.string   "phone_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "donatedtestings", force: true do |t|
+    t.string   "proposer"
+    t.string   "title"
+    t.text     "description"
+    t.float    "target_amount"
+    t.float    "current_amount"
+    t.datetime "start_date"
+    t.datetime "deadline"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,6 +80,15 @@ ActiveRecord::Schema.define(version: 20131110163334) do
     t.text     "text"
     t.string   "link"
     t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "account_type"
+    t.string   "name"
+    t.float    "balance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

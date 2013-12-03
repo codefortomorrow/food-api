@@ -70,8 +70,8 @@ food_seed.each do |item|
         f.fat_trans_g = item[12]
         f.carbohydrate_g = item[13]
         f.sodium_mg = item[14]
-	f.rec_score = Random::rand(-20..20)
-	f.followed_no = Random::rand(0..100)
+	    f.rec_score = Random::rand(-20..20)
+	    f.followed_no = Random::rand(0..100)
     end
 end
 
@@ -85,6 +85,22 @@ news_seed.each do |item|
     end
 end
 
+user = User.create! do |u|
+    u.email = 'xuehung@gmail.com'
+    u.account_type = 'Google'
+    u.name = 'Mike Cheng'
+    u.balance = 100
+end
+
+user = Donatedtesting.create! do |t|
+    t.proposer = '消基會'
+    t.title = '對雙層牛肉吉士堡做檢測'
+    t.description = '懷疑麥當勞的該漢堡的牛肉參有由食用蟲與漂白劑混合製成的人造蛋白質'
+    t.target_amount = 5000
+    t.current_amount = 0
+    t.start_date = Date.parse('2013-12-1')
+    t.deadline = Date.parse('2013-12-31')
+end
 
 
 
