@@ -72,6 +72,7 @@ food_seed.each do |item|
         f.sodium_mg = item[14]
 	    f.rec_score = Random::rand(-20..20)
 	    f.followed_no = Random::rand(0..100)
+	    f.img_url = "http://foodopendata-api.herokuapp.com/food_img/oilpic/#{item[0]}.png"
     end
 end
 
