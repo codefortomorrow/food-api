@@ -95,7 +95,7 @@ end
 
 user = Donatedtesting.create! do |t|
     t.proposer = '消基會'
-    t.title = '對雙層牛肉吉士堡做檢測'
+    t.title = '對麥當勞雙層牛肉吉士堡做檢測'
     t.description = '懷疑麥當勞的該漢堡的牛肉參有由食用蟲與漂白劑混合製成的人造蛋白質'
     t.target_amount = 5000
     t.current_amount = 0
