@@ -8,5 +8,5 @@ class API < Grape::API
     mount Followapi::API
     mount Newsapi::API
     mount Companyapi::API
-    mount Donatedtestingapi::API
+    mount Donationapi::API
 end
