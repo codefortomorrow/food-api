@@ -12,9 +12,5 @@ class API < Grape::API
     mount Companyapi::API
     mount Donationapi::API
 
-    add_swagger_documentation
-    before do
-	header['Access-Control-Allow-Origin'] = '*'
-	header['Access-Control-Request-Method'] = '*'
-    end
+    add_swagger_documentation :mount_path => "api_doc", :base_path => "http://foodopendata-api.herokuapp.com/api"
 end
