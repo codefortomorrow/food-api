@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20131207022909) do
     t.string   "account_type"
     t.string   "name"
     t.float    "balance"
+    t.datetime "last_login_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

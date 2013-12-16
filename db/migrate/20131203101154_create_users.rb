@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :account_type
       t.string :name
       t.float  :balance
+      t.timestamp :last_login_time
 
       t.timestamps
     end

@@ -1,3 +1,5 @@
+require 'grape-swagger'
+
 class API < Grape::API
     version 'v1', using: :header, vendor: 'foodopendata'
     format :json
@@ -9,4 +11,6 @@ class API < Grape::API
     mount Newsapi::API
     mount Companyapi::API
     mount Donationapi::API
+
+    add_swagger_documentation
 end

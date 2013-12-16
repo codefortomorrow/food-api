@@ -45,6 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'grape'
+gem 'grape-swagger'
 
 group :development do
       gem 'sqlite3'
