@@ -14,9 +14,9 @@ module Donationapi
 	    end
 	end
 
-	resource :donatedtesting do
+	resource :testproject do
 
-	    # /donatedtesting/<barcode>
+	    # /testproject/<barcode>
 	    desc "Return the information of the given testing id"
 	    params do 
 		requires :id, type: String, desc: "testing id"
@@ -27,14 +27,14 @@ module Donationapi
 		end
 	    end
 
-	    # /donatedtesting/
+	    # /testproject/
 	    desc "Get all food"
 	    paginable
 	    get do
 		if update_date
-		    present Donatedtesting.where("updated_at > ?", update_date)
+		    present Testproject.where("updated_at > ?", update_date)
 		else
-		    present Donatedtesting.all
+		    present Testproject.all
 		end
 	    end
 	end
@@ -57,16 +57,24 @@ module Donationapi
 	    desc "create a donation"
 	    params do
 		requires :user_id, type: String, desc: "user id"
-		requires :donatedtesting_id, type: String, desc: "testing_id"
+		requires :testproject_id, type: String, desc: "test project id"
 		requires :amount, type: Float, desc: "how much the user donates"
 	    end
 	    route_param :user_id do
 		post do
 		    user = User.find(params[:user_id])
-		    donatedtesting = Donatedtesting.find(params[:donatedtesting_id])
+		    project = Testproject.find(params[:testproject_id])
 		    Donation.create!(:user_id => params[:user_id], 
-				     :donatedtesting_id => params[:donatedtesting_id], 
+				     :testproject_id => params[:testproject_id], 
 				     :amount => params[:amount])
+		    # update current amount
+		    amount = params[:amount].to_f
+		    project.current_amount += amount
+		    
+		    # update the number of donators
+		    project.current_donators += 1
+		    project.save
+		    
 		    Result.success
 		end
 	    end

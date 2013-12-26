@@ -23,21 +23,9 @@ ActiveRecord::Schema.define(version: 20131207022909) do
     t.datetime "updated_at"
   end
 
-  create_table "donatedtestings", force: true do |t|
-    t.string   "proposer"
-    t.string   "title"
-    t.text     "description"
-    t.float    "target_amount"
-    t.float    "current_amount"
-    t.datetime "start_date"
-    t.datetime "deadline"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "donations", force: true do |t|
     t.integer  "user_id"
-    t.integer  "donatedtesting_id"
+    t.integer  "testproject_id"
     t.float    "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,7 +45,18 @@ ActiveRecord::Schema.define(version: 20131207022909) do
     t.datetime "updated_at"
   end
 
-  create_table "foods", force: true do |t|
+  create_table "news", force: true do |t|
+    t.string   "title"
+    t.datetime "timestamp"
+    t.string   "abstract"
+    t.text     "text"
+    t.string   "link"
+    t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
     t.string   "barcode"
     t.string   "name"
     t.integer  "company_id"
@@ -81,13 +80,18 @@ ActiveRecord::Schema.define(version: 20131207022909) do
     t.datetime "updated_at"
   end
 
-  create_table "news", force: true do |t|
+  create_table "testprojects", force: true do |t|
+    t.string   "proposer"
     t.string   "title"
-    t.datetime "timestamp"
-    t.string   "abstract"
-    t.text     "text"
-    t.string   "link"
-    t.string   "source"
+    t.string   "testers"
+    t.string   "test_items"
+    t.integer  "food_id"
+    t.text     "description"
+    t.float    "target_amount"
+    t.float    "current_amount"
+    t.integer  "current_donators"
+    t.datetime "start_date"
+    t.datetime "deadline"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

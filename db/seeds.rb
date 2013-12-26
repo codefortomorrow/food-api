@@ -52,9 +52,14 @@ company_seed.each do |item|
     end
 end
 
+Product.create! do |p|
+    p.name = '麥當勞'
+    p.img_url = 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Mcdonalds-90s-logo.svg/220px-Mcdonalds-90s-logo.svg.png'
+end
+
 food_seed.each do |item|
     c = Company.where(:name => item[2]).limit(1)
-    food = Food.create! do |f|
+    product = Product.create! do |f|
         f.barcode = item[0]
         f.name = item[1]
         f.company_id = c[0].id
@@ -68,11 +73,11 @@ food_seed.each do |item|
         f.fat_g = item[10]
         f.fat_saturated_g = item[11]
         f.fat_trans_g = item[12]
-        f.carbohydrate_g = item[13]
-        f.sodium_mg = item[14]
-	    f.rec_score = Random::rand(-20..20)
-	    f.followed_no = Random::rand(0..100)
-	    f.img_url = "http://foodopendata-api.herokuapp.com/food_img/oilpic/#{item[0]}.png"
+	f.carbohydrate_g = item[13]
+	f.sodium_mg = item[14]
+	f.rec_score = Random::rand(-20..20)
+	f.followed_no = Random::rand(0..100)
+	f.img_url = "http://foodopendata-api.herokuapp.com/food_img/oilpic/#{item[0]}.png"
     end
 end
 
@@ -93,12 +98,16 @@ user = User.create! do |u|
     u.balance = 100
 end
 
-user = Donatedtesting.create! do |t|
+user = Testproject.create! do |t|
     t.proposer = '消基會'
     t.title = '對麥當勞雙層牛肉吉士堡做檢測'
+    t.food_id = 1
     t.description = '懷疑麥當勞的該漢堡的牛肉參有由食用蟲與漂白劑混合製成的人造蛋白質'
+    t.testers = 'GMP實驗室,消基會自有品牌實驗室'
+    t.test_items = '廚房衛生,肉品生菌數'
     t.target_amount = 5000
     t.current_amount = 0
+    t.current_donators = 0
     t.start_date = Date.parse('2013-12-1')
     t.deadline = Date.parse('2013-12-31')
 end
