@@ -5,14 +5,14 @@ class CreateTestprojects < ActiveRecord::Migration
       t.string :title
       t.string :testers
       t.string :test_items
-      t.integer:food_id
+      t.integer :product_id
       t.text   :description
       t.float  :target_amount
       t.float  :current_amount
       t.integer:current_donators
       t.timestamp :start_date
       t.timestamp :deadline
-      
+
       t.timestamps
     end
   end
