@@ -101,7 +101,7 @@ end
 user = Testproject.create! do |t|
     t.proposer = '消基會'
     t.title = '對麥當勞雙層牛肉吉士堡做檢測'
-    t.food_id = 1
+    t.product_id = 1
     t.description = '懷疑麥當勞的該漢堡的牛肉參有由食用蟲與漂白劑混合製成的人造蛋白質'
     t.testers = 'GMP實驗室,消基會自有品牌實驗室'
     t.test_items = '廚房衛生,肉品生菌數'

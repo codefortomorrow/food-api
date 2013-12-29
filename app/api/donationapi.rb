@@ -23,7 +23,7 @@ module Donationapi
 	    end
 	    route_param :id do
 		get do
-		    Donatedtesting.find(params[:id])
+		    Testproject.find(params[:id])
 		end
 	    end
 
