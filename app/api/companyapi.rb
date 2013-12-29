@@ -1,10 +1,10 @@
 module Companyapi
     class API < Grape::API
-    include ApiPagination
+        include ApiPagination
 
         resource :company do
             desc "Return the information of company given company id"
-            params do 
+            params do
                 requires :id, type: String, desc: "company id"
             end
             route_param :id do
@@ -19,9 +19,6 @@ module Companyapi
                 present Company.all
             end
         end
-
-
-
     end
 end
 
