@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#Food.create!(:barcode =>'00001', :company_name => '統洋', :product_name => '有機發芽黑豆漿', :capacity => 450, :capacity_unit => 'ml', 
-#             :calory_kcal => 52, :protein_g =>3.5, :fat_g => 1.4, :fat_saturated_g => 0.1, :fat_trans_g => 0, 
+#Food.create!(:barcode =>'00001', :company_name => '統洋', :product_name => '有機發芽黑豆漿', :capacity => 450, :capacity_unit => 'ml',
+#             :calory_kcal => 52, :protein_g =>3.5, :fat_g => 1.4, :fat_saturated_g => 0.1, :fat_trans_g => 0,
 #             :carbohydrate_g => 6.3, :sodium_mg => 12)
 
 company_seed = [
@@ -35,7 +35,7 @@ food_seed = [
 ]
 
 news_seed = [
-    ['TVBS', '不純！泰山、頂新、三多市　3「進口油」令下架', Time.local(2013,"oct",30,17,55,0), 
+    ['TVBS', '不純！泰山、頂新、三多市　3「進口油」令下架', Time.local(2013,"oct",30,17,55,0),
         '衛福部透過各縣市衛生局執行新一波的「清油下架」專案，其中，知名大廠泰山出品的「健康好理油100%純葡萄籽油」'\
         '、頂新集團出品的「寶素齋100%純葡萄籽油」，還有「三多市純橄欖油1000毫升裝」，這3款從國外原裝進口的食用油必須立刻下架',
         'http://tw.news.yahoo.com/%E5%BF%AB%E8%A8%8A-%E4%B8%8D%E7%B4%94-%E6%B3%B0%E5%B1%B1-%E9%A0%82%E6%96%B0-%E4%B8%89%E5%A4%9A%E5%B8%82-3-%E9%80%B2%E5%8F%A3%E6%B2%B9-%E4%BB%A4%E4%B8%8B%E6%9E%B6-095500036.html']
@@ -136,8 +136,8 @@ input = [
 
 input.each do |item|
     #Food.create!(:barcode => item[0], :company_name => item[1])
-    Food.create!(:barcode => item[0], :company_name => item[1], :product_name => item[2], :capacity => item[3], :capacity_unit => item[4], 
-             :calory_kcal => item[5], :protein_g => item[6], :fat_g => item[7], :fat_saturated_g => item[8], :fat_trans_g => item[9], 
+    Food.create!(:barcode => item[0], :company_name => item[1], :product_name => item[2], :capacity => item[3], :capacity_unit => item[4],
+             :calory_kcal => item[5], :protein_g => item[6], :fat_g => item[7], :fat_saturated_g => item[8], :fat_trans_g => item[9],
              :carbohydrate_g => item[10], :sodium_mg => item[11])
 end
 
